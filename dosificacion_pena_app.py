@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 
-from dosificacion_pena_app import DosificacionPena
+from dosificacion_pena import DosificacionPena
 
 class DosificacionPenaApp(tk.Tk):
     def __init__(self):
@@ -51,7 +51,7 @@ class DosificacionPenaApp(tk.Tk):
             tiene_agravantes = self.tiene_agravantes.get()
             tiene_atenuantes = self.tiene_atenuantes.get()
 
-            resultado = dosificacion.calcular_pena(tiene_agravantes, tiene_atenuantes)
+            resultado = dosificacion.calcular_pena(tiene_agravantes, tiene_atenuantes, factores_especificos=0.5)
 
             self.resultado_label.config(text=f"Pena Final: {resultado['pena_final']} meses\nCuarto Aplicable: {resultado['cuarto_aplicable']}")
 
